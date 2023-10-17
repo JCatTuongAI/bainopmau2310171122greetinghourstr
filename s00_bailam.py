@@ -49,6 +49,12 @@ greeting('2100')             | Good evening!          | 14
 #endregion debai
 
 #region bailam
+import re
 def greeting(hour_str):
-  return 'todo'
+  hour = re.findall(r'(\d{1,2})(:\d{2})',hour_str)[0]
+  h = hour[0]
+  if 'AM' or 'am' in hour_str and h == '12:00' and h : 
+    return 'Good morning!'
+  if 'PM' or 'pm' in hour_str and h != '12:00':
+    return 'Good evening!'
 #endregion bailam
